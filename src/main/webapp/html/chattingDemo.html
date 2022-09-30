@@ -1,0 +1,64 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>websocket Test</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../css/chattingDemo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script data-main="../js/chatConnDemo.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="../js/chatConnDemo.js"></script>
+    <!-- <script type="text/javascript" data-main="../js/chatConnDemo.js" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script> -->
+    <!-- <script type="text/javascript" data-main="../js/chatConnDemo.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script> -->
+  </head>
+  <div class="fHeader">
+
+    <input type="text" id="chatID">
+    <input type="button" id="btnConn" class="btn btn-primary btn-sm" value="connect">
+    <input type="button" id="btnDisconn" class="btn btn-danger btn-sm" value="disconnect">
+  </div>
+  <div class="fBody">
+    <textarea id="chatView" rows="8" cols="50"></textarea>
+  </div>
+  <body ng-cloak ng-app="chatApp">
+
+    <div class='container' ng-controller="MessageCtrl as chatMessage">
+
+      <div class='chatbox'>
+        <div class='messagebox'>
+          <div class="chatbox__messages">
+            <div class="chatbox__messages__user-message" ng-repeat="message in messages">
+              <div class="chatbox__messages__user-message--ind-message">
+                <p class="name">{{message.Name}}</p>
+                <br/>
+                <p class="message">{{message.Message}}</p>
+              </div>
+            </div>
+          </div>
+          <form>
+            <input id="sendText" type="text" placeholder="Enter your message" ng-keypress="sendMessage($event)">
+          </form>
+        </div>
+        <div class='chatbox__user-list'>
+          <h1>User list</h1>
+          <div class='chatbox__user--active'>
+            <p>{{userId}}</p>
+          </div>
+          <!-- <div class='chatbox__user--busy'>
+            <p>Angelina Jolie</p>
+          </div>
+          <div class='chatbox__user--active'>
+            <p>George Clooney</p>
+          </div>
+          <div class='chatbox__user--active'>
+            <p>Seth Rogen</p>
+          </div>
+          <div class='chatbox__user--away'>
+            <p>John Lydon</p>
+          </div> -->
+        </div>
+      </div>
+  </body>
+</html>

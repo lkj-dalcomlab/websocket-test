@@ -1,0 +1,24 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>websocket Test</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script type="text/javascript" data-main="../js/chatConn.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  </head>
+  <body>
+    <div class="fHeader">
+      
+      <input type="text" id="chatID">
+      <input type="button" id="btnConn" class="btn btn-primary btn-sm" value="connect">
+      <input type="button" id="btnDisconn" class="btn btn-danger btn-sm" value="disconnect">
+    </div>
+    <div class="fBody">
+      <textarea id="chatView" rows="8" cols="50"></textarea>
+    </div>
+    <div class="fFooter">
+      <input type="text" id="chatText">
+      <button type="button" id="btnSend" class="btn btn-default btn-sm">send</button>
+    </div>
+  </body>
+</html>

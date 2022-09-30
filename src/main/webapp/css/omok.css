@@ -1,0 +1,145 @@
+.boardBG {
+  position: absolute;
+  display: inline-block;
+  border: 1px solid #522;
+  background-color: #E9C372;
+}
+.board {
+    position: absolute;
+    display: inline-block;
+}
+
+.board div, .boardBG div{
+    margin: 0;
+    padding: 0;
+}
+
+.row, .rowBG{
+    font-size: 0px;
+}
+
+.cell, .cellBG{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+}
+
+/* 세로선 */
+.cell:before {
+    /* margin: auto; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    /* background-color: #522; */
+    /* width: 1px; */
+    /* height: 100%; */
+}
+
+.cellBG:before {
+    margin: auto; /* 컨테이너 중앙에 오도록 한다. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    background-color: #522;
+    width: 1px;
+    height: 100%;
+}
+
+/* 가로선 */
+.cell:after {
+    /* margin: auto; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    /* width: 100%; */
+    /* height: 1px; */
+}
+.cellBG:after {
+    margin: auto; /* 컨테이너 중앙에 오도록 한다. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    background-color: #522;
+    width: 100%;
+    height: 1px;
+}
+
+/* 오목판 왼쪽 테두리 처리 */
+.cellBG:first-child:after {
+    width: 50%;
+    left: 50%;
+}
+
+/* 오목판 오른쪽 테두리 처리 */
+.cellBG:last-child:after {
+    width: 50%;
+    right: 50%;
+}
+
+/* 오목판 위쪽 테두리 처리 */
+.rowBG:first-child .cellBG:before {
+    height: 50%;
+    top: 50%;
+}
+
+/* 오목판 아래쪽 테두리 처리 */
+.rowBG:last-child .cellBG:before {
+    height: 50%;
+    bottom: 50%;
+}
+
+.white:before {
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #404040, inset -3px -3px 5px gray;
+    width: 100%;
+    height: 100%;
+}
+
+.black:after {
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #404040;
+    width: 100%;
+    height: 100%;
+}
+
+/* .cell:not(.black):not(.white):hover:before {
+    background-color: gray;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #404040;
+    opacity: 0.5;
+}
+
+.cell:not(.black):not(.white):hover:after {
+    background-color: gray;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #404040;
+    opacity: 0.5;
+} */
+
+canvas {
+  z-index: 1;
+  position: absolute;
+  visibility: hidden;
+  /* width: 0;
+  height: 0; */
+  /* display: block; */
+}

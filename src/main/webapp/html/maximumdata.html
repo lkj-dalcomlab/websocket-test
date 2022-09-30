@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>maximum data test</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script type="text/javascript" data-main="../js/dataRead.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <!-- <script src="../js/wsConn.js"></script> -->
+    <!-- <script src="../js/dataRead.js"></script> -->
+  </head>
+  <body>
+    <div class="fHeader">
+      fileSize :
+      <input id="fileInfo" type="text" readonly>
+      <!-- <input id="testInput" type="file"> -->
+      <button type="button" id="fileLoad" class="btn btn-primary btn-sm">
+        load
+      </button>
+      <button type="button" id="dataSend" class="btn btn-primary btn-sm">
+        send
+      </button>
+      <select id="selection">
+        <option value="true">text</option>
+        <option value="false">binary</option>
+      </select>
+    </div>
+    <div class="fBody">
+      <textarea id="textdoc" rows="25" cols="100"></textarea>
+    </div>
+    <div class = "fFooter">
+      <textarea id="socketLog" rows="15" cols="100"></textarea>
+    </div>
+  </body>
+</html>
